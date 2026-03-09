@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f1ea;
+  --foreground: #1f2937;
+  --card: #fffdf8;
+  --border: #d6cdc0;
+  --accent: #0f766e;
+  --accent-strong: #115e59;
 }
 
 @theme inline {
@@ -14,13 +18,66 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f4f1ea;
+    --foreground: #1f2937;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+}
+
+.pro-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.pro-shell::before,
+.pro-shell::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.pro-shell::before {
+  width: 340px;
+  height: 340px;
+  background: #c7e9e5;
+  top: -120px;
+  left: -80px;
+}
+
+.pro-shell::after {
+  width: 380px;
+  height: 380px;
+  background: #f7d7a8;
+  right: -120px;
+  bottom: -160px;
+}
+
+.pro-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 14px 45px rgba(31, 41, 55, 0.09);
+}
+
+.pro-fade-in {
+  animation: rise-in 520ms ease both;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
