@@ -5,7 +5,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "eslint"
+    "lint": "eslint",
+    "preview:pages": "npx wrangler pages dev out",
+    "deploy:pages": "npx wrangler pages deploy out --project-name dev-encoding-toolkit"
   },
   "dependencies": {
     "next": "16.1.6",

@@ -1,14 +1,7 @@
 name = "dev-encoding-toolkit"
-type = "javascript"
-account_id = ""
-workers_dev = false
-route = ""
-zone_id = ""
 
-# Cloudflare Pages settings
+compatibility_date = "2026-03-11"
+
+compatibility_flags = ["nodejs_compat"]
+
 pages_build_output_dir = "out"
-
-[env.production]
-name = "dev-encoding-toolkit-prod"
-route = "yourdomain.com/*"
-zone_id = ""
